@@ -1,0 +1,12 @@
+#This file needs to be placed into the /etc/suricata/rules directory, and must be named exactly custom.rules
+
+#See official suricata documentation for more information on formatting rules. https://docs.suricata.io/en/suricata-6.0.0/rules/intro.html
+
+#These are example rules we will be utilizing for the daemon. You can and should modify these to best suit your own purposes.
+
+alert tcp any any -> 1.1.1.1 80,443 (msg:"CUSTOM - HTTP TRAFFIC TO 1.1.1.1 SPOTTED"; flow:established; threshold: type limit, track by_src, count 1, seconds 60; sid:1; rev:1;) #This rule alerts any traffic to the destination IP of 1.1.1.1 over ports 80 or 443.
+
+alert tcp any any -> any any (msg:"CUSTOM - HAX MALWARE SUSPECTED"; content:"HAX"; flow:established; threshold: type limit, track by_src, count 1, seconds 60; sid:2; rev:1;) #This rule alerts any traffic that includes the keyword "HAX" in plaintext. 
+
+alert ip $HOME_NET any -> any any (msg:"CUSTOM - IPREP BLOCKLIST"; iprep:dst,Custom,>,0; threshold: type limit, track by_src, count 1, seconds 60; sid:3; rev:1;) #This rule alerts any traffic to a destination IP that is deemed unsafe by our IP reputation file.
+

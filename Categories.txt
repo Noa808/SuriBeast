@@ -1,0 +1,7 @@
+#This file needs to be placed into the /etc/suricata/iprep directory. To make this directory, simply use the command mkdir iprep while inside the /etc/suricata directory. 
+
+#See official suricata documentation for more information on formatting rules. https://docs.suricata.io/en/suricata-6.0.0/reputation/ipreputation/ip-reputation-format.html
+
+#For example's sake, I've just included 1 category. It is notated with the following standardized format: id,short-name,short-description
+
+1,Custom,Custom Blocklist

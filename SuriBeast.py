@@ -34,7 +34,8 @@ while True: #Starts a loop to continuously monitor logs and block IPs
                                 else:
                                         print(f'IP {ip} already blocked') #Prints a message indicating the IP is already blocked
                 print('Sleeping...')
-                time.sleep(60) #Sleeps for 60 seconds before reading the logs again - you can modify this as you please
+                print('==========' * 7) 
+                time.sleep(30) #Sleeps for 30 seconds before reading the logs again - you can modify this as you please
         except KeyboardInterrupt: #Prints a message and breaks the loop if the script is interrupted by the user
                 print("Interrupted by user, exiting...")
                 break

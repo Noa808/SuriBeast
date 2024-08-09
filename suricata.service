@@ -1,0 +1,19 @@
+#This config file will have suricata run automatically upon startup of the machine.
+#This file must be titled suricata.service and must be located in the /etc/systemd/system directory.
+#Once the file is saved, you will need to run the following commands to enable it:
+#"systemctl daemon-reload"
+#"systemctl enable suricata"
+#"systemctl start suricata" 
+#To view the status of the daemon, use the command "systemctl status suricata"
+
+[Unit]
+Description=Suricata Intrusion Detection Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/suricata -c /etc/suricata/suricata.yaml --af-packet=eth0 # This specifies the command line to run to boot up suricata
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure # This ensures suricata will restart automatically upon crashing or failing
+
+[Install]
+WantedBy=multi-user.target # This ensures suricata starts during the boot process

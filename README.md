@@ -1,11 +1,10 @@
 # SuriBeast
 A two-part linux daemon for automating an adaptive firewall via suricata.
 
-This repository will contain the following: Code for the suricata traffic analysis and firewall creation, necessary files for rule creation and notation, and an explanation of how it works & how you may further optomize this for yourself.
+For a detailed walkthrough, check out https://noacyber.wordpress.com/Suribeast/
 
 There is no licensing, copyrights, etc involved. Feel free to use and reproduce this however you wish!
 
-A video guide will be coming soon. Stay tuned!
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 To get started, you will need to install suricata. You can find official documentation and steps here: https://docs.suricata.io/en/suricata-6.0.0/install.html

@@ -47,15 +47,11 @@ That's all for the setup! There are many different ways you can personally custo
 
 Here are some basic commands that you will be using throughout the process:
 
-1. suricata --af-packet=(interface)    |     Begins the packet capture. replace (interface) with your interface, ex. eth0, br0, wlp1s0, etc
-
 2. iptables -nL -t raw                 |     Shows your current firewall ruleset.
 
 3. iptables -F -t raw                  |     Resets your firewall ruleset.
 
-4. supervisorctl start suribeast       |     Begins the suribeast daemon that reads the pcap logs and adds rules to the firewall.
 
-5. supervisorctl stop suribeast        |     Ends the suribeast daemon.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Helpful tips:

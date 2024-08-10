@@ -5,13 +5,14 @@
 #"systemctl enable suricata"
 #"systemctl start suricata" 
 #To view the status of the daemon, use the command "systemctl status suricata"
+#To stop the daemon, use the command "systemctl stop suricata"
 
 [Unit]
 Description=Suricata Intrusion Detection Service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/suricata -c /etc/suricata/suricata.yaml --af-packet=eth0 # This specifies the command line to run to boot up suricata
+ExecStart=/usr/bin/suricata --af-packet=eth0 -c /etc/suricata/suricata.yaml # This specifies the command line to run to boot up suricata
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure # This ensures suricata will restart automatically upon crashing or failing
 

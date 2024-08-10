@@ -1,5 +1,5 @@
 # SuriBeast
-A linux daemon for automating an adaptive firewall via suricata.
+A two-part linux daemon for automating an adaptive firewall via suricata.
 
 This repository will contain the following: Code for the suricata traffic analysis and firewall creation, necessary files for rule creation and notation, and an explanation of how it works & how you may further optomize this for yourself.
 
@@ -19,8 +19,7 @@ Then, do a search for the line containing "platform libpcap capture support". Ag
 Next, search for reputation-categories-file, and this will take us to the IP reputation settings. Ensure these settings are set as so:
 reputation-categories-file: /etc/suricata/iprep/categories.txt
 default-reputation-path: /etc/suricata/iprep
-reputation-files:
- - reputation.list
+reputation-files: reputation.list
 
 Finally, search for default-rule-path, this will bring us to the rules settings. Ensure that you add custom.rules to the rule-files section. 
 
@@ -38,7 +37,9 @@ https://github.com/Noa808/SuriBeast/blob/main/Reputation.list
 
 Next, we will be adding in our SuriBeast python script. Venture over to your home user directory (cd /home/...) and create a new text document named suribeast.py (or any name of your choosing!) and write in the script from https://github.com/Noa808/SuriBeast/blob/main/SuriBeast.py
 
-Once that is saved, we just need to set up our daemon! Venture over to /etc/supervisor/conf.d and create a new text file named suribeast.conf , utilizing the instructions from https://github.com/Noa808/SuriBeast/blob/main/SuriBeast.conf.
+Once that is saved, venture over to /etc/supervisor/conf.d and create a new text file named suribeast.conf , utilizing the instructions from https://github.com/Noa808/SuriBeast/blob/main/SuriBeast.conf.
+
+Lastly, set up the suricata daemon using the instructions found in https://github.com/Noa808/SuriBeast/blob/main/Suricata.service
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
